@@ -1,3 +1,4 @@
+import Api from '../Api';
 import {
   SELECT_SUBREDDIT,
   INVALIDATE_SUBREDDIT,
@@ -43,7 +44,7 @@ function receivePosts(subreddit, json, state) {
 function fetchPosts(subreddit) {
   return (dispatch, getState) => {
     dispatch(requestPosts(subreddit));
-    return fetch(`http://www.reddit.com/r/${subreddit}.json`)
+    return fetch(Api.subreddit(subreddit))
       .then(req => req.json())
       .then(json => dispatch(receivePosts(subreddit, json, getState())));
   };
@@ -52,7 +53,7 @@ function fetchPosts(subreddit) {
 export function fetchNextPagePosts(subreddit, after) {
   return (dispatch, getState) => {
     dispatch(requestPosts(subreddit));
-    return fetch(`http://www.reddit.com/r/${subreddit}.json?after=${after}`)
+    return fetch(Api.subreddit(subreddit, { after: after }))
       .then(req => req.json())
       .then(json => dispatch(receivePosts(subreddit, json, getState())));
   };

@@ -27,7 +27,6 @@ function requestPosts(subreddit) {
 }
 
 function receivePosts(subreddit, json, state) {
-  const selectedSubreddit = state.selectedSubreddit;
   const posts = state.postsBySubreddit[subreddit].items;
 
   return {

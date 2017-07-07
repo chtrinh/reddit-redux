@@ -49,13 +49,7 @@ class Reddit extends Component {
   }
 
   render() {
-    const {
-      selectedSubreddit,
-      posts,
-      isFetching,
-      lastUpdated,
-      loadNextPage
-    } = this.props;
+    const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props;
     return (
       <div>
         <Picker
@@ -69,7 +63,7 @@ class Reddit extends Component {
               Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}
             </span>}
           {isFetching &&
-            <a href="#" onClick={this.handleRefreshClick}>
+            <a href="#refresh" onClick={this.handleRefreshClick}>
               Refresh
             </a>}
         </p>
@@ -79,7 +73,7 @@ class Reddit extends Component {
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <Posts posts={posts} />
           </div>}
-        <a href="#" onClick={this.loadMore}>
+        <a href="#load" onClick={this.loadMore}>
           Load More
         </a>
       </div>

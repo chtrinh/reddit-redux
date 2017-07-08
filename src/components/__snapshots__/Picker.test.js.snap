@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<span>
+  <h1>
+    frontend
+  </h1>
+  <select
+    onChange={[Function]}
+    value="frontend"
+  >
+    <option
+      value="reactjs"
+    >
+      reactjs
+    </option>
+    <option
+      value="frontend"
+    >
+      frontend
+    </option>
+  </select>
+</span>
+`;

@@ -4,7 +4,7 @@ import {
   INVALIDATE_SUBREDDIT,
   REQUEST_POSTS,
   RECEIVE_POSTS
-} from './index';
+} from './types';
 
 export function selectSubreddit(subreddit) {
   return {

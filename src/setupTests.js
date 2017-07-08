@@ -16,3 +16,16 @@ const mockResponse = (status, statusText, response) => {
 };
 
 global.mockResponse = mockResponse;
+
+// Disable all fetch request for testing!
+beforeEach(() => {
+  window.fetch = jest
+    .fn()
+    .mockImplementation(() =>
+      Promise.resolve(
+        console.error(
+          'Override this function with a mockResponse in your it block!'
+        )
+      )
+    );
+});

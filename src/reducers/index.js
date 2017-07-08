@@ -15,14 +15,13 @@ function selectedSubreddit(state = 'reactjs', action) {
   }
 }
 
-function posts(
-  state = {
-    isFetching: false,
-    didInvalidate: false,
-    items: []
-  },
-  action
-) {
+const initialPostState = {
+  isFetching: false,
+  didInvalidate: false,
+  items: []
+};
+
+function posts(state = initialPostState, action) {
   switch (action.type) {
     case INVALIDATE_SUBREDDIT:
       return {
@@ -45,6 +44,7 @@ function posts(
         loadNextPage: action.nextPage
       };
     default:
+      /* istanbul ignore next: can not be reached */
       return state;
   }
 }

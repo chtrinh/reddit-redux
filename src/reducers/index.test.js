@@ -1,4 +1,4 @@
-import reducer from './index';
+import reducer from './';
 import * as types from '../actions/types';
 
 describe('todos reducer', () => {

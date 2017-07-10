@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<Connect(Reddit)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Reddit
+    dispatch={[Function]}
+    isFetching={false}
+    lastUpdated={1487076708000}
+    loadNextPage="post_id"
+    posts={
+      Array [
+        Object {
+          "name": "Wick",
+        },
+      ]
+    }
+    selectedSubreddit="frontend"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <div>
+      <Picker
+        onChange={[Function]}
+        options={
+          Array [
+            "reactjs",
+            "frontend",
+          ]
+        }
+        value="frontend"
+      >
+        <span>
+          <h1>
+            frontend
+          </h1>
+          <select
+            onChange={[Function]}
+            value="frontend"
+          >
+            <option
+              value="reactjs"
+            >
+              reactjs
+            </option>
+            <option
+              value="frontend"
+            >
+              frontend
+            </option>
+          </select>
+        </span>
+      </Picker>
+      <p>
+        <span>
+          Last updated at 
+          4:51:48 AM
+          .
+           
+        </span>
+      </p>
+      <div
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Posts
+          posts={
+            Array [
+              Object {
+                "name": "Wick",
+              },
+            ]
+          }
+        >
+          <ul>
+            <li>
+              1
+               - 
+              <a />
+            </li>
+          </ul>
+        </Posts>
+      </div>
+      <a
+        href="#load"
+        onClick={[Function]}
+      >
+        Load More
+      </a>
+    </div>
+  </Reddit>
+</Connect(Reddit)>
+`;
+
+exports[`should handle invalid subreddit 1`] = `
+<Connect(Reddit)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Reddit
+    dispatch={[Function]}
+    isFetching={true}
+    posts={Array []}
+    selectedSubreddit="random"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <div>
+      <Picker
+        onChange={[Function]}
+        options={
+          Array [
+            "reactjs",
+            "frontend",
+          ]
+        }
+        value="random"
+      >
+        <span>
+          <h1>
+            random
+          </h1>
+          <select
+            onChange={[Function]}
+            value="random"
+          >
+            <option
+              value="reactjs"
+            >
+              reactjs
+            </option>
+            <option
+              value="frontend"
+            >
+              frontend
+            </option>
+          </select>
+        </span>
+      </Picker>
+      <p>
+        <a
+          href="#refresh"
+          onClick={[Function]}
+        >
+          Refresh
+        </a>
+      </p>
+      <h2>
+        Loading...
+      </h2>
+      <a
+        href="#load"
+        onClick={[Function]}
+      >
+        Load More
+      </a>
+    </div>
+  </Reddit>
+</Connect(Reddit)>
+`;

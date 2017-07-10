@@ -82,6 +82,7 @@ describe('async action creators', () => {
         Promise.resolve(mockResponse(200, null, response))
       );
 
+    expect.assertions(1);
     return store.dispatch(creators.fetchNextPagePosts(subreddit)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
       jest.resetAllMocks();
@@ -124,6 +125,7 @@ describe('async action creators', () => {
         Promise.resolve(mockResponse(200, null, response))
       );
 
+    expect.assertions(1);
     return store.dispatch(creators.fetchPostsIfNeeded(subreddit)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
       jest.resetAllMocks();
@@ -162,6 +164,7 @@ describe('async action creators', () => {
         Promise.resolve(mockResponse(200, null, response))
       );
 
+    expect.assertions(1);
     return store.dispatch(creators.fetchPostsIfNeeded(subreddit)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
       jest.resetAllMocks();

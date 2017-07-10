@@ -7,11 +7,10 @@ import {
   invalidateSubreddit,
   fetchNextPagePosts
 } from '../actions/creators';
-
 import Picker from '../components/Picker';
 import Posts from '../components/Posts';
 
-class Reddit extends Component {
+export class Reddit extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -31,13 +30,13 @@ class Reddit extends Component {
     }
   }
 
-  handleChange(nextSubreddit) {
-    this.props.dispatch(selectSubreddit(nextSubreddit));
+  loadMore() {
+    const { dispatch, selectedSubreddit, loadNextPage } = this.props;
+    dispatch(fetchNextPagePosts(selectedSubreddit, loadNextPage));
   }
 
-  loadMore() {
-    const { dispatch, selectedSubreddit } = this.props;
-    dispatch(fetchNextPagePosts(selectedSubreddit, this.props.loadNextPage));
+  handleChange(nextSubreddit) {
+    this.props.dispatch(selectSubreddit(nextSubreddit));
   }
 
   handleRefreshClick(e) {
@@ -50,6 +49,7 @@ class Reddit extends Component {
 
   render() {
     const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props;
+
     return (
       <div>
         <Picker
